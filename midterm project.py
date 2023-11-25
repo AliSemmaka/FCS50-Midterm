@@ -135,29 +135,17 @@ def sort_all_tabs():
     # print(tabs)
       
 def save_tabs():
+    json_in = json.dumps(tabs)
 
-# a Python object (dict):
-#     x = {
-#   "name": "John",
-#   "age": 30,
-#   "city": "New York"
-# }
-
-# # convert into JSON:
-#     y = json.dumps(x)
-
-# the result is a JSON string:
-    # print(y)
-    
-    # a = {'a':1,'b':2,'c':3}
-    # with open("your_json_file", "w") as fp:
-    # json.dump(a , fp)
-
-    json_string = json.dumps(tabs)
-    print(json_string)
-    
     with open('jason_file', 'w') as file:
         json.dump(tabs, file, indent= 2 )
+        
+def import_tabs():
+    json_out = json.loads(tabs)
+    
+    with open('output_json', 'r') as file:
+        jason_out_from_file= json.load(file)
+        print(jason_out_from_file)
         
         
         
