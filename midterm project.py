@@ -85,8 +85,10 @@ def display_all_tabs():
     if len(tabs) == 0:
         print("No tabs to display.")
         return
+    # Print the titles of all open tabs
     for tab in tabs:
         print(tab["title"])
+        # display the sub tabs hierarchically
         for sub_tab in tab['sub_tabs']:
             print("--" + sub_tab['title'])
 
@@ -115,6 +117,7 @@ def open_nested_tabs():
 print(tabs)
     
 def sort_all_tabs():
+    
     # Check if there are any tabs to sort
     if len(tabs) == 0:
         print("No tabs available to sort.")
@@ -134,6 +137,7 @@ def sort_all_tabs():
       border=border+1
       
 def save_tabs():
+    
     #convert python objects to JSON string
     json_in = json.dumps(tabs)
     
@@ -142,6 +146,7 @@ def save_tabs():
         json.dump(tabs, file, indent= 2 )
         
 def import_tabs():
+    
     #convert from JSON string into a Python object.
     json_out = json.loads(tabs)
     
