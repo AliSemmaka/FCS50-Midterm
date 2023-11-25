@@ -122,7 +122,7 @@ def sort_all_tabs():
     if len(tabs) == 0:
         print("No tabs available to sort.")
         return
-    #selection sort
+    # Selection sort
     border=0
     while border < len(tabs)-1: #O(n), n being the length of the list
       minIndex=border 
@@ -139,16 +139,18 @@ def sort_all_tabs():
 def save_tabs():
     
     file_dir = str(input("File directory: "))
-    #convert to a file in JSON format
+    # convert to a file in JSON format
     with open(file_dir, 'w') as file:
         json.dump(tabs, file, indent= 2)
         
 def import_tabs():
-    #define global tabs 
+    
+    # define global tabs 
     global tabs
     file_dir = str(input("File directory: "))
-    #read JSON file and return python object
+    # read JSON file and return python object
     with open(file_dir, 'r') as file:
+        # assign imported data to tabs list
         tabs= json.load(file)
         
         
