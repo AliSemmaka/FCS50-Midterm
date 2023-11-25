@@ -119,7 +119,7 @@ def sort_all_tabs():
     if len(tabs) == 0:
         print("No tabs available to sort.")
         return
-    
+    #selection sort
     border=0
     while border < len(tabs)-1: #O(n), n being the length of the list
       minIndex=border 
@@ -132,7 +132,6 @@ def sort_all_tabs():
       tabs[minIndex]=temp
 
       border=border+1
-    # print(tabs)
       
 def save_tabs():
     #convert python objects to JSON string
