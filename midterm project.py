@@ -61,16 +61,17 @@ def close_tab():
     
 def switch_tab():
      
-    print(tabs)
     try:
         tab_index_input= int(input("Insert the index of tab you want to close: "))
+        # Check if the index is valid
         if 0 <= tab_index_input < len(tabs):
+            # get the html content from the url
             html_content = requests.get(tabs[tab_index_input]['url']).content
             print(html_content)
         else:
             print('Invalid index. Please insert a valid index.')
             return
-        
+     # if the user did not enter any input   
     except:
         for tab in tabs:
             if tab['opened'] == True:
