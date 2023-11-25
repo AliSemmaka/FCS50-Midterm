@@ -40,6 +40,22 @@ def close_tab():
         print("Data is not provided")
         return
     
+    if 0 <= tab_index_input < len(tabs):
+        closed_tab_was_opened = False
+        if tabs[tab_index_input]['opened'] == True:
+            closed_tab_was_opened = True
+            
+        removed_tab= tabs.pop(tab_index_input) 
+        
+        if len(tabs) > 0 and closed_tab_was_opened == True:
+            tabs[0]['opened'] = True
+            
+        print(f"Tab {removed_tab['title']} closed. Updated list:", tabs)
+    else:
+        print("Invalid index. Please insert a valid index.")
+        tab_index_input= int(input("Insert the index of tab you want to close: "))
+        return
+    
 def mainMenu(): 
  choice = -99  
  while choice != 9:
