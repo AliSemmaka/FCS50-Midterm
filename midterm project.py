@@ -5,11 +5,6 @@ Created on Thu Nov 23 00:54:18 2023
 @author: alise
 """
 
-#title
-#URL
-#which tab is open
-
-# tab={'title:"google", url:"https://www.bing.com", tabs:[]}
 import requests
 import json
 
