@@ -66,6 +66,14 @@ def switch_tab():
         else:
             print('Invalid index. Please insert a valid index.')
             return
+    except:
+        for tab in tabs:
+            if tab['opened'] == True:
+                html_content = requests.get(tab['url']).content
+                print(html_content)
+                return
+        print("Data is not provided")
+        return
     
 def mainMenu(): 
  choice = -99  
