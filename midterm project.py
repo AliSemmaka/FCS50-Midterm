@@ -100,6 +100,17 @@ def open_nested_tabs():
 
     # Check if the parent index is valid
     if 0 <= parent_index < len(tabs):
+        # Prompt the user for the titles and contents of the new tabs
+        title_input= str(input("Insert Title: "))
+        url_input= str(input("Insert URL: "))
+        
+        new_tab= {'title': title_input, 'url': url_input}
+        tabs[parent_index]['sub_tabs'].append(new_tab)
+        
+        print("Nested tabs created successfully.")
+    else:
+        print("Invalid parent index. Please enter a valid index.")  
+print(tabs)
     
 def mainMenu(): 
  choice = -99  
