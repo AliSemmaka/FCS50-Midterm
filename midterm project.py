@@ -25,6 +25,15 @@ def open_tab():
             tab['opened'] = False
         
     tabs.append(new_tab)
+    
+def close_tab():
+    
+    # Check if there are any tabs to close
+    if len(tabs) == 0:
+        print("No tabs to close.")
+        return
+    
+    print(tabs)
 
 def mainMenu(): 
  choice = -99  
