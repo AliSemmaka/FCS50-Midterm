@@ -13,15 +13,17 @@ tabs=[]
 
 
 def open_tab():
+    
+    # Get the input for creating new tab
     title_input= str(input("Insert Title: "))
     url_input= str(input("Insert URL: "))
-    
+    # new tab dictionary
     new_tab= {'title': title_input, 'url': url_input, 'sub_tabs':[], 'opened': True}
-    
+    # close last tab opened
     for tab in tabs:
         if tab['opened'] == True:
             tab['opened'] = False
-        
+    # add new tab to tabs list   
     tabs.append(new_tab)
     
 def close_tab():
@@ -31,28 +33,34 @@ def close_tab():
         print("No tabs to close.")
         return
     
-    print(tabs)
     try:
         tab_index_input= int(input("Insert the index of tab you want to close: "))
-    except:
-        print("Data is not provided")
-        return
-    
-    if 0 <= tab_index_input < len(tabs):
-        closed_tab_was_opened = False
-        if tabs[tab_index_input]['opened'] == True:
-            closed_tab_was_opened = True
-            
-        removed_tab= tabs.pop(tab_index_input) 
         
-        if len(tabs) > 0 and closed_tab_was_opened == True:
-            tabs[0]['opened'] = True
+        # Check if the index is valid
+        if 0 <= tab_index_input < len(tabs):
+            closed_tab_was_opened = False
+            if tabs[tab_index_input]['opened'] == True:
+                closed_tab_was_opened = True
+                
+            removed_tab= tabs.pop(tab_index_input) 
             
-        print(f"Tab {removed_tab['title']} closed. Updated list:", tabs)
-    else:
-        print("Invalid index. Please insert a valid index.")
-        tab_index_input= int(input("Insert the index of tab you want to close: "))
-        return
+            if len(tabs) > 0 and closed_tab_was_opened == True:
+                tabs[0]['opened'] = True
+                
+            print(f"Tab {removed_tab['title']} closed. Updated list:", tabs)
+        else:
+            print("Invalid index. Please insert a valid index.")
+            tab_index_input= int(input("Insert the index of tab you want to close: "))
+            return
+    # if the user did not enter any input   
+    except:
+        for index, tab in enumerate(tabs):
+            if tab['opened'] == True:
+                tabs.pop(index)
+                print('Last opened tab is closed.')
+                
+    
+    
     
 def switch_tab():
      
