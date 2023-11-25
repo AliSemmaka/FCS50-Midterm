@@ -88,7 +88,12 @@ def display_all_tabs():
         for sub_tab in tab['sub_tabs']:
             print("--" + sub_tab['title'])
 
+def open_nested_tabs():
 
+    # Check if there are any tabs to create nested tabs
+    if len(tabs) == 0:
+        print("No tabs available to create nested tabs.")
+        return
     
 def mainMenu(): 
  choice = -99  
