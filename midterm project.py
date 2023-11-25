@@ -95,6 +95,12 @@ def open_nested_tabs():
         print("No tabs available to create nested tabs.")
         return
     
+    # Get the index of the parent tab for creating nested tabs
+    parent_index = int(input("Enter the index of the parent tab where you want to insert additional tabs: "))
+
+    # Check if the parent index is valid
+    if 0 <= parent_index < len(tabs):
+    
 def mainMenu(): 
  choice = -99  
  while choice != 9:
