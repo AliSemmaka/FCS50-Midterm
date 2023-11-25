@@ -144,6 +144,7 @@ def save_tabs():
         json.dump(tabs, file, indent= 2)
         
 def import_tabs():
+    #define global tabs 
     global tabs
     file_dir = str(input("File directory: "))
     #read JSON file and return python object
