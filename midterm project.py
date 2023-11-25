@@ -108,7 +108,7 @@ def open_nested_tabs():
         # Prompt the user for the titles and contents of the new tabs
         title_input= str(input("Insert Title: "))
         url_input= str(input("Insert URL: "))
-        
+        # create nested tab
         new_tab= {'title': title_input, 'url': url_input}
         tabs[parent_index]['sub_tabs'].append(new_tab)
         
