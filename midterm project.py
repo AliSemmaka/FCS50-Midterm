@@ -10,6 +10,7 @@ Created on Thu Nov 23 00:54:18 2023
 #which tab is open
 
 # tab={'title:"google", url:"https://www.bing.com", tabs:[]}
+import requests
 
 tabs=[]
 
@@ -66,6 +67,7 @@ def switch_tab():
         else:
             print('Invalid index. Please insert a valid index.')
             return
+        
     except:
         for tab in tabs:
             if tab['opened'] == True:
