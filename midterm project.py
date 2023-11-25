@@ -124,7 +124,6 @@ def sort_all_tabs():
     while border < len(tabs)-1: #O(n), n being the length of the list
       minIndex=border 
       for i in range(border+1, len(tabs)):
-        # Compare function checks if tabs[i] is smaller than tabs[minIndex]
         if tabs[i]['title'].lower() < tabs[minIndex]['title'].lower(): #O(1), is the line that specifies the order
            minIndex=i
       #swap the two elements
@@ -138,18 +137,30 @@ def sort_all_tabs():
 def save_tabs():
 
 # a Python object (dict):
-    x = {
-  "name": "John",
-  "age": 30,
-  "city": "New York"
-}
+#     x = {
+#   "name": "John",
+#   "age": 30,
+#   "city": "New York"
+# }
 
-# convert into JSON:
-    y = json.dumps(x)
+# # convert into JSON:
+#     y = json.dumps(x)
 
 # the result is a JSON string:
-    print(y)
+    # print(y)
+    
+    # a = {'a':1,'b':2,'c':3}
+    # with open("your_json_file", "w") as fp:
+    # json.dump(a , fp)
 
+    json_string = json.dumps(tabs)
+    print(json_string)
+    
+    with open('jason_file', 'w') as file:
+        json.dump(tabs, file, indent= 2 )
+        
+        
+        
 def mainMenu(): 
  choice = -99  
  while choice != 9:
