@@ -118,7 +118,7 @@ def sort_all_tabs():
         minIndex=border 
         for i in range(border+1, len(tabs)):
           # Compare function checks if tabs[i] is smaller than tabs[minIndex]
-          if tabs['title'].lower() < tabs[minIndex].lower(): #O(1), is the line that specifies the order
+          if tabs[i]['title'].lower() < tabs[minIndex].lower(): #O(1), is the line that specifies the order
              minIndex=i
         #swap the two elements
         temp=tabs[border] #O(1)
