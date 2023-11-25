@@ -56,6 +56,17 @@ def close_tab():
         tab_index_input= int(input("Insert the index of tab you want to close: "))
         return
     
+def switch_tab():
+    print(tabs)
+    try:
+        tab_index_input= int(input("Insert the index of tab you want to close: "))
+        if 0 <= tab_index_input < len(tabs):
+            html_content = requests.get(tabs[tab_index_input]['url']).content
+            print(html_content)
+        else:
+            print('Invalid index. Please insert a valid index.')
+            return
+    
 def mainMenu(): 
  choice = -99  
  while choice != 9:
