@@ -112,6 +112,22 @@ def open_nested_tabs():
         print("Invalid parent index. Please enter a valid index.")  
 print(tabs)
     
+def sort_all_tabs():
+      border=0
+      while border < len(tabs)-1: #O(n), n being the length of the list
+        minIndex=border 
+        for i in range(border+1, len(border)):
+          # Compare function checks if tabs[i] is smaller than tabs[minIndex]
+          if tabs['title'].lower() < tabs[minIndex].lower(): #O(1), is the line that specifies the order
+             minIndex=i
+        #swap the two elements
+        temp=tabs[border] #O(1)
+        tabs[border]=tabs[minIndex]
+        tabs[minIndex]=temp
+
+        border=border+1
+      print(tabs)
+
 def mainMenu(): 
  choice = -99  
  while choice != 9:
