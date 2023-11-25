@@ -60,6 +60,7 @@ def close_tab():
         return
     
 def switch_tab():
+     
     print(tabs)
     try:
         tab_index_input= int(input("Insert the index of tab you want to close: "))
@@ -88,7 +89,7 @@ def display_all_tabs():
     # Print the titles of all open tabs
     for tab in tabs:
         print(tab["title"])
-        # display the sub tabs hierarchically
+        # Display the sub tabs hierarchically
         for sub_tab in tab['sub_tabs']:
             print("--" + sub_tab['title'])
 
@@ -114,7 +115,6 @@ def open_nested_tabs():
         print("Nested tabs created successfully.")
     else:
         print("Invalid parent index. Please enter a valid index.")  
-print(tabs)
     
 def sort_all_tabs():
     
@@ -138,22 +138,17 @@ def sort_all_tabs():
       
 def save_tabs():
     
-    #convert python objects to JSON string
-    json_in = json.dumps(tabs)
-    
+    file_dir = str(input("File directory: "))
     #convert to a file in JSON format
-    with open('jason_file', 'w') as file:
-        json.dump(tabs, file, indent= 2 )
+    with open(file_dir, 'w') as file:
+        json.dump(tabs, file, indent= 2)
         
 def import_tabs():
-    
-    #convert from JSON string into a Python object.
-    json_out = json.loads(tabs)
-    
+    global tabs
+    file_dir = str(input("File directory: "))
     #read JSON file and return python object
-    with open('output_json', 'r') as file:
-        jason_out_from_file= json.load(file)
-        print(jason_out_from_file)
+    with open(file_dir, 'r') as file:
+        tabs= json.load(file)
         
         
         
