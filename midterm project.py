@@ -135,8 +135,10 @@ def sort_all_tabs():
     # print(tabs)
       
 def save_tabs():
+    #convert to json string
     json_in = json.dumps(tabs)
-
+    
+    #convert to a file in json format
     with open('jason_file', 'w') as file:
         json.dump(tabs, file, indent= 2 )
         
