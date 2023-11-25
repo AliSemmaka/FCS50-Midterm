@@ -34,7 +34,12 @@ def close_tab():
         return
     
     print(tabs)
-
+    try:
+        tab_index_input= int(input("Insert the index of tab you want to close: "))
+    except:
+        print("Data is not provided")
+        return
+    
 def mainMenu(): 
  choice = -99  
  while choice != 9:
