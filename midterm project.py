@@ -185,6 +185,7 @@ def mainMenu():
     elif choice==8:
         import_tabs()
     elif choice==9:
+        print("Exiting the system. Goodbye!")
         break
     else:
         print("Invalid choice, please insert a valid option.")

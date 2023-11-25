@@ -2,23 +2,13 @@
   {
     "title": "ali",
     "url": "ali",
-    "sub_tabs": [
-      {
-        "title": "aloushi",
-        "url": "aloushi"
-      }
-    ],
+    "sub_tabs": [],
     "opened": false
   },
   {
-    "title": "alaa",
-    "url": "alaa",
-    "sub_tabs": [
-      {
-        "title": "loulou",
-        "url": "loulou"
-      }
-    ],
+    "title": "hana",
+    "url": "hana",
+    "sub_tabs": [],
     "opened": true
   }
 ]
