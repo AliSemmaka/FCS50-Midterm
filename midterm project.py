@@ -5,7 +5,26 @@ Created on Thu Nov 23 00:54:18 2023
 @author: alise
 """
 
+#title
+#URL
+#which tab is open
 
+# tab={'title:"google", url:"https://www.bing.com", tabs:[]}
+
+tabs=[]
+
+
+def open_tab():
+    title_input= str(input("Insert Title: "))
+    url_input= str(input("Insert URL: "))
+    
+    new_tab= {'title': title_input, 'url': url_input, 'sub_tabs':[], 'opened': True}
+    
+    for tab in tabs:
+        if tab['opened'] == True:
+            tab['opened'] = False
+        
+    tabs.append(new_tab)
 
 def mainMenu(): 
  choice = -99  
