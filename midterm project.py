@@ -11,6 +11,8 @@ Created on Thu Nov 23 00:54:18 2023
 
 # tab={'title:"google", url:"https://www.bing.com", tabs:[]}
 import requests
+import json
+
 
 tabs=[]
 
@@ -113,20 +115,40 @@ def open_nested_tabs():
 print(tabs)
     
 def sort_all_tabs():
-      border=0
-      while border < len(tabs)-1: #O(n), n being the length of the list
-        minIndex=border 
-        for i in range(border+1, len(tabs)):
-          # Compare function checks if tabs[i] is smaller than tabs[minIndex]
-          if tabs[i]['title'].lower() < tabs[minIndex]['title'].lower(): #O(1), is the line that specifies the order
-             minIndex=i
-        #swap the two elements
-        temp=tabs[border] #O(1)
-        tabs[border]=tabs[minIndex]
-        tabs[minIndex]=temp
+    # Check if there are any tabs to sort
+    if len(tabs) == 0:
+        print("No tabs available to sort.")
+        return
+    
+    border=0
+    while border < len(tabs)-1: #O(n), n being the length of the list
+      minIndex=border 
+      for i in range(border+1, len(tabs)):
+        # Compare function checks if tabs[i] is smaller than tabs[minIndex]
+        if tabs[i]['title'].lower() < tabs[minIndex]['title'].lower(): #O(1), is the line that specifies the order
+           minIndex=i
+      #swap the two elements
+      temp=tabs[border] #O(1)
+      tabs[border]=tabs[minIndex]
+      tabs[minIndex]=temp
 
-        border=border+1
-      # print(tabs)
+      border=border+1
+    # print(tabs)
+      
+def save_tabs():
+
+# a Python object (dict):
+    x = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+
+# convert into JSON:
+    y = json.dumps(x)
+
+# the result is a JSON string:
+    print(y)
 
 def mainMenu(): 
  choice = -99  
