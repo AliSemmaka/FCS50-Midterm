@@ -77,6 +77,19 @@ def switch_tab():
         print("Data is not provided")
         return
     
+def display_all_tabs():
+    
+    # Check if there are any tabs to display
+    if len(tabs) == 0:
+        print("No tabs to display.")
+        return
+    for tab in tabs:
+        print(tab["title"])
+        for sub_tab in tab['sub_tabs']:
+            print("--" + sub_tab['title'])
+
+
+    
 def mainMenu(): 
  choice = -99  
  while choice != 9:
