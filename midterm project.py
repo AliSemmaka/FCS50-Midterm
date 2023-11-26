@@ -99,7 +99,7 @@ def display_all_tabs(): #O (n+k)
             print("--" + sub_tab['title'])
             
 
-def open_nested_tabs():
+def open_nested_tabs(): #O(1) 
 
     # Check if there are any tabs to create nested tabs
     if len(tabs) == 0:
