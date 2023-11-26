@@ -27,7 +27,7 @@ def open_tab(): #O(n), n being the length of tabs
     tabs.append(new_tab)
     
     
-def close_tab(): 
+def close_tab(): #O(n^2)
     
     # Check if there are any tabs to close
     if len(tabs) == 0: 
@@ -44,7 +44,7 @@ def close_tab():
             if tabs[tab_index_input]['opened'] == True:
                 closed_tab_was_opened = True
                 
-            removed_tab= tabs.pop(tab_index_input) 
+            removed_tab= tabs.pop(tab_index_input) #O(n), n being the length of tabs 
             
             if len(tabs) > 0 and closed_tab_was_opened == True:
                 tabs[0]['opened'] = True
@@ -56,7 +56,7 @@ def close_tab():
             return
     # if the user did not enter any input   
     except:
-        for index, tab in enumerate(tabs): 
+        for index, tab in enumerate(tabs): #O(n), n being the length of tabs 
             if tab['opened'] == True:
                 tabs.pop(index)
                 print('Last opened tab is closed.')
