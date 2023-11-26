@@ -12,7 +12,7 @@ import json
 tabs=[]
 
 
-def open_tab():
+def open_tab(): #O(n), n being the length of tabs
     
     # Get the input for creating new tab
     title_input= str(input("Insert Title: "))
@@ -20,25 +20,25 @@ def open_tab():
     # new tab dictionary
     new_tab= {'title': title_input, 'url': url_input, 'sub_tabs':[], 'opened': True}
     # close last tab opened
-    for tab in tabs:
-        if tab['opened'] == True:
+    for tab in tabs: #O(n), n being the length of tabs 
+        if tab['opened'] == True: 
             tab['opened'] = False
     # add new tab to tabs list   
     tabs.append(new_tab)
     
     
-def close_tab():
+def close_tab(): 
     
     # Check if there are any tabs to close
-    if len(tabs) == 0:
-        print("No tabs to close.")
+    if len(tabs) == 0: 
+        print("No tabs to close.") 
         return
     
     try:
         tab_index_input= int(input("Insert the index of tab you want to close: "))
         
         # Check if the index is valid
-        if 0 <= tab_index_input < len(tabs):
+        if 0 <= tab_index_input < len(tabs): 
             # if we are closing an opened tab, open another one if it exists
             closed_tab_was_opened = False
             if tabs[tab_index_input]['opened'] == True:
@@ -56,7 +56,7 @@ def close_tab():
             return
     # if the user did not enter any input   
     except:
-        for index, tab in enumerate(tabs):
+        for index, tab in enumerate(tabs): 
             if tab['opened'] == True:
                 tabs.pop(index)
                 print('Last opened tab is closed.')
@@ -97,6 +97,7 @@ def display_all_tabs():
         # Display the sub tabs hierarchically
         for sub_tab in tab['sub_tabs']:
             print("--" + sub_tab['title'])
+            
 
 def open_nested_tabs():
 
@@ -129,7 +130,7 @@ def sort_all_tabs():
         return
     # Selection sort
     border=0
-    while border < len(tabs)-1: #O(n), n being the length of the list
+    while border < len(tabs)-1: #O(n), n being the length of the border
       minIndex=border 
       for i in range(border+1, len(tabs)):
         if tabs[i]['title'].lower() < tabs[minIndex]['title'].lower(): #O(1), is the line that specifies the order
@@ -141,12 +142,14 @@ def sort_all_tabs():
 
       border=border+1
       
+      
 def save_tabs():
     
     file_dir = str(input("File directory: "))
     # convert to a file in JSON format
     with open(file_dir, 'w') as file:
         json.dump(tabs, file, indent= 2)
+        
         
 def import_tabs():
     
