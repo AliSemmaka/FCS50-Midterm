@@ -62,21 +62,21 @@ def close_tab(): #O(n^2)
                 print('Last opened tab is closed.')
                 
     
-def switch_tab():
+def switch_tab(): #O (m*n)
      
     try:
         tab_index_input= int(input("Insert the index of tab for displaying its content "))
         # Check if the index is valid
         if 0 <= tab_index_input < len(tabs):
             # get the html content from the url
-            html_content = requests.get(tabs[tab_index_input]['url']).content
+            html_content = requests.get(tabs[tab_index_input]['url']).content #O (m), m being the time of request
             print(html_content)
         else:
             print('Invalid index. Please insert a valid index.')
             return
      # if the user did not enter any input   
     except:
-        for tab in tabs:
+        for tab in tabs: #O (n), n being the length of tabs
             if tab['opened'] == True:
                 html_content = requests.get(tab['url']).content
                 print(html_content)
@@ -95,7 +95,7 @@ def display_all_tabs():
     for tab in tabs:
         print(tab["title"])
         # Display the sub tabs hierarchically
-        for sub_tab in tab['sub_tabs']:
+        for sub_tab in tab['sub_tabs']: 
             print("--" + sub_tab['title'])
             
 
