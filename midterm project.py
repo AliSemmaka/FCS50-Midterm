@@ -6,10 +6,11 @@ Created on Thu Nov 23 00:54:18 2023
 """
 
 # reference url:
-    # https://stackoverflow.com/questions/42825102/how-to-save-python-dictionary-into-json-files
-    # https://stackoverflow.com/questions/20199126/reading-json-from-a-file
-    # https://www.geeksforgeeks.org/what-is-web-scraping-and-how-to-use-it/
-    # https://www.geeksforgeeks.org/python-web-scraping-tutorial/
+   # https://stackoverflow.com/questions/42825102/how-to-save-python-dictionary-into-json-files
+   # https://stackoverflow.com/questions/20199126/reading-json-from-a-file
+   # https://www.geeksforgeeks.org/what-is-web-scraping-and-how-to-use-it/
+   # https://www.geeksforgeeks.org/python-web-scraping-tutorial/
+   
     
 import requests
 import json
