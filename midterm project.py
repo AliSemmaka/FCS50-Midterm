@@ -162,10 +162,10 @@ def import_tabs(): #O(k), k being the size of data in json file
         tabs= json.load(file) #O(k), k being the size of data in json file
         
         
-def mainMenu(): 
+def mainMenu(): #O(n*m)
  choice = -99  
- while choice != 9:
-    print(*tabs, sep='\n')
+ while choice != 9: #O(n), n being the number of iteration the user inputs
+    print(*tabs, sep='\n') #O(m), m being the length of tabs
     print("Enter: ")
     print("1. To open tab")
     print("2. To close tab")
