@@ -121,6 +121,7 @@ def open_nested_tabs(): #O(1)
         print("Nested tabs created successfully.")
     else:
         print("Invalid parent index. Please enter a valid index.")  
+        
     
 def sort_all_tabs(): #O(n^2)
     
