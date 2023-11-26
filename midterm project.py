@@ -122,7 +122,7 @@ def open_nested_tabs(): #O(1)
     else:
         print("Invalid parent index. Please enter a valid index.")  
     
-def sort_all_tabs():
+def sort_all_tabs(): #O(n^2)
     
     # Check if there are any tabs to sort
     if len(tabs) == 0:
@@ -130,13 +130,13 @@ def sort_all_tabs():
         return
     # Selection sort
     border=0
-    while border < len(tabs)-1: #O(n), n being the length of the border
+    while border < len(tabs)-1: #O(n), n being the length of the tabs
       minIndex=border 
-      for i in range(border+1, len(tabs)):
-        if tabs[i]['title'].lower() < tabs[minIndex]['title'].lower(): #O(1), is the line that specifies the order
+      for i in range(border+1, len(tabs)): #O (n), n being the length of the tabs
+        if tabs[i]['title'].lower() < tabs[minIndex]['title'].lower(): 
            minIndex=i
       #swap the two elements
-      temp=tabs[border] #O(1)
+      temp=tabs[border] 
       tabs[border]=tabs[minIndex]
       tabs[minIndex]=temp
 
