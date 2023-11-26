@@ -85,17 +85,17 @@ def switch_tab(): #O (m*n)
         return
     
     
-def display_all_tabs():
+def display_all_tabs(): #O (n+k)
     
     # Check if there are any tabs to display
     if len(tabs) == 0:
         print("No tabs to display.")
         return
     # Print the titles of all open tabs
-    for tab in tabs:
+    for tab in tabs: #O (n), n being the length of tabs
         print(tab["title"])
         # Display the sub tabs hierarchically
-        for sub_tab in tab['sub_tabs']: 
+        for sub_tab in tab['sub_tabs']: #O (k), k being the number of sub tabs
             print("--" + sub_tab['title'])
             
 
