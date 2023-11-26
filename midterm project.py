@@ -56,7 +56,7 @@ def close_tab(): #O(n^2)
             if len(tabs) > 0 and closed_tab_was_opened == True:
                 tabs[0]['opened'] = True
                 
-            print(f"Tab {removed_tab['title']} closed. Updated list:", tabs)
+            print(f"Tab {removed_tab['title']} closed.")
         else:
             print("Invalid index. Please insert a valid index.")
             tab_index_input= int(input("Insert the index of tab you want to close: "))
