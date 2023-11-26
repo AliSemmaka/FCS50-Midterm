@@ -26,6 +26,7 @@ def open_tab():
     # add new tab to tabs list   
     tabs.append(new_tab)
     
+    
 def close_tab():
     
     # Check if there are any tabs to close
@@ -61,8 +62,6 @@ def close_tab():
                 print('Last opened tab is closed.')
                 
     
-    
-    
 def switch_tab():
      
     try:
@@ -82,8 +81,9 @@ def switch_tab():
                 html_content = requests.get(tab['url']).content
                 print(html_content)
                 return
-        print("Data is not provided")
+        print("The content of last opened tab is displayed.")
         return
+    
     
 def display_all_tabs():
     
