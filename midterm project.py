@@ -151,7 +151,7 @@ def save_tabs():  #O(n), n being the length of the tabs
         json.dump(tabs, file, indent= 2)  #O(n), n being the length of the tabs
         
         
-def import_tabs():
+def import_tabs(): #O(k), k being the size of data in json file
     
     # define global tabs 
     global tabs
@@ -159,8 +159,7 @@ def import_tabs():
     # read JSON file and return python object
     with open(file_dir, 'r') as file:
         # assign imported data to tabs list
-        tabs= json.load(file)
-        
+        tabs= json.load(file) #O(k), k being the size of data in json file
         
         
 def mainMenu(): 
