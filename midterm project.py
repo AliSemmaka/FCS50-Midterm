@@ -143,12 +143,12 @@ def sort_all_tabs(): #O(n^2)
       border=border+1
       
       
-def save_tabs():
+def save_tabs():  #O(n), n being the length of the tabs
     
     file_dir = str(input("File directory: "))
     # convert to a file in JSON format
     with open(file_dir, 'w') as file:
-        json.dump(tabs, file, indent= 2)
+        json.dump(tabs, file, indent= 2)  #O(n), n being the length of the tabs
         
         
 def import_tabs():
