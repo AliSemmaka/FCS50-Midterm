@@ -38,6 +38,7 @@ def close_tab():
         
         # Check if the index is valid
         if 0 <= tab_index_input < len(tabs):
+            # if we are closing an opened tab, open another one if it exists
             closed_tab_was_opened = False
             if tabs[tab_index_input]['opened'] == True:
                 closed_tab_was_opened = True
@@ -65,7 +66,7 @@ def close_tab():
 def switch_tab():
      
     try:
-        tab_index_input= int(input("Insert the index of tab you want to close: "))
+        tab_index_input= int(input("Insert the index of tab for displaying its content "))
         # Check if the index is valid
         if 0 <= tab_index_input < len(tabs):
             # get the html content from the url
@@ -162,7 +163,7 @@ def import_tabs():
 def mainMenu(): 
  choice = -99  
  while choice != 9:
-    print(tabs)
+    print(*tabs, sep='\n')
     print("Enter: ")
     print("1. To open tab")
     print("2. To close tab")
